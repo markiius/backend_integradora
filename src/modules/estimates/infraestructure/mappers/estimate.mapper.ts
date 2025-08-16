@@ -13,12 +13,12 @@ export class EstimateMapper {
       prismaEstimate.id_user,
       prismaEstimate.service_type,
       prismaEstimate.description,
-      prismaEstimate.quantity,
-      prismaEstimate.amount,
+      prismaEstimate.quantity.toNumber(),
+      prismaEstimate.amount.toNumber(),
       prismaEstimate.tax_included,
-      prismaEstimate.subtotal,
-      prismaEstimate.tax_amount,
-      prismaEstimate.total,
+      prismaEstimate.subtotal.toNumber(),
+      prismaEstimate.tax_amount.toNumber(),
+      prismaEstimate.total.toNumber(),
     );
   }
 
@@ -33,12 +33,12 @@ export class EstimateMapper {
       id_user: estimate.id_user,
       service_type: estimate.service_type,
       description: estimate.description,
-      quantity: estimate.quantity,
-      amount: estimate.amount,
+      quantity: new Prisma.Decimal(estimate.quantity),
+      amount: new Prisma.Decimal(estimate.amount),
       tax_included: estimate.tax_included,
-      subtotal: estimate.subtotal,
-      tax_amount: estimate.tax_amount,
-      total: estimate.total
+      subtotal: new Prisma.Decimal(estimate.subtotal),
+      tax_amount: new Prisma.Decimal(estimate.tax_amount),
+      total: new Prisma.Decimal(estimate.total)
     };
   }
 }

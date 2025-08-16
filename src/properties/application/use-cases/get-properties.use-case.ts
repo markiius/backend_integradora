@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { Properties } from "src/properties/domain/entities/properties";
-import { IPropertiesRepository } from "src/properties/domain/interfaces/properties-repository.interface";
+import { Properties } from '../../domain/entities/properties';
+//"src/properties/domain/entities/properties";
+import { IPropertiesRepository } from '../../domain/interfaces/properties-repository.interface';
+//"src/properties/domain/interfaces/properties-repository.interface";
 
 @Injectable()
 export class GetPropertiesUseCase {

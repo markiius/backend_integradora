@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { Estimate } from "src/modules/estimates/domain/entities/estimate"; 
-import { IEstimateRepository } from "src/modules/estimates/domain/interfaces/estimate-repository.interface";
+import { Estimate } from '../../domain/entities/estimate';
+//"src/modules/estimates/domain/entities/estimate"; 
+import { IEstimateRepository } from '../../domain/interfaces/estimate-repository.interface';
+//"src/modules/estimates/domain/interfaces/estimate-repository.interface";
  
 
 @Injectable()

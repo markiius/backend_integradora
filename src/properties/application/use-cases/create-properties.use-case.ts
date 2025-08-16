@@ -1,7 +1,10 @@
 import { Injectable } from "@nestjs/common";
-import { Properties } from "src/properties/domain/entities/properties";
-import { IPropertiesRepository } from "src/properties/domain/interfaces/properties-repository.interface";
-import { CreatePropertiesDto } from "src/properties/application/dtos/create-properties.dto";
+import { Properties } from '../../domain/entities/properties';
+//"src/properties/domain/entities/properties";
+import { IPropertiesRepository } from '../../domain/interfaces/properties-repository.interface';
+//"src/properties/domain/interfaces/properties-repository.interface";
+import { CreatePropertiesDto } from '../../application/dtos/create-properties.dto';
+//"src/properties/application/dtos/create-properties.dto";
 
 
 @Injectable()

@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { Estimate } from "src/modules/estimates/domain/entities/estimate";
+import { Estimate } from "../../domain/entities/estimate";
 import { IEstimateRepository } from "../../domain/interfaces/estimate-repository.interface";
 import { CreateEstimateDto } from "../dtos/create-estimate.dto";
 

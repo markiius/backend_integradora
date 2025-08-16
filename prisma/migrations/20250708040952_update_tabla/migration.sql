@@ -7,8 +7,8 @@
 
 */
 -- AlterTable
-ALTER TABLE `estimate` DROP COLUMN `creation_date`,
-    ADD COLUMN `send_date` DATETIME(6) NOT NULL,
+ALTER TABLE `estimate` /*DROP COLUMN `creation_date`,*/
+    /*ADD COLUMN `send_date` DATETIME(6) NOT NULL,*/
     MODIFY `quantity` DECIMAL(8, 2) NOT NULL,
     MODIFY `amount` DECIMAL(8, 2) NOT NULL,
     MODIFY `subtotal` DECIMAL(8, 2) NOT NULL,

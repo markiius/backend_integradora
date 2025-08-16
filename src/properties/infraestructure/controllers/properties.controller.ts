@@ -1,8 +1,11 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post } from "@nestjs/common";
-import { CreatePropertiesUseCase } from "src/properties/application/use-cases/create-properties.use-case";
-import { CreatePropertiesDto } from "src/properties/application/dtos/create-properties.dto";
+import { CreatePropertiesUseCase } from '../../application/use-cases/create-properties.use-case';
+//"src/properties/application/use-cases/create-properties.use-case";
+import { CreatePropertiesDto } from '../../application/dtos/create-properties.dto';
+//"src/properties/application/dtos/create-properties.dto";
 import { Properties } from "src/properties/domain/entities/properties";
-import { GetPropertiesUseCase } from "src/properties/application/use-cases/get-properties.use-case";
+import { GetPropertiesUseCase } from '../../application/use-cases/get-properties.use-case';
+//"src/properties/application/use-cases/get-properties.use-case";
 
 @Controller('properties')
 export class PropertiesController {

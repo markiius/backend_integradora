@@ -1,4 +1,5 @@
-import { UpdatePropertiesDto } from "src/properties/application/dtos/update-properties.dto"
+import { UpdatePropertiesDto } from '../../application/dtos/update-properties.dto';
+//"src/properties/application/dtos/update-properties.dto"
 import { Properties } from "../entities/properties"
 
 export abstract class IPropertiesRepository {
