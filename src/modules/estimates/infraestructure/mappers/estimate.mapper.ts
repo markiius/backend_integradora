@@ -1,5 +1,8 @@
 import { Estimate } from '../../domain/entities/estimate';
-import { Prisma, Estimate as prismaEstimate } from '../../../../../generated/prisma';
+import {
+  Prisma,
+  Estimate as prismaEstimate,
+} from '../../../../../generated/prisma';
 
 export class EstimateMapper {
   static toDomain(prismaEstimate: prismaEstimate): Estimate {
@@ -38,7 +41,7 @@ export class EstimateMapper {
       tax_included: estimate.tax_included,
       subtotal: new Prisma.Decimal(estimate.subtotal),
       tax_amount: new Prisma.Decimal(estimate.tax_amount),
-      total: new Prisma.Decimal(estimate.total)
+      total: new Prisma.Decimal(estimate.total),
     };
   }
 }

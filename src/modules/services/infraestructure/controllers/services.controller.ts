@@ -1,4 +1,11 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
 import { CreateServicesUseCase } from 'src/modules/services/application/use-cases/create-services.use-case';
 import { CreateServicesDto } from 'src/modules/services/application/dtos/create-services.dto';
 import { GetServicesUseCase } from 'src/modules/services/application/use-cases/get-services.use-case';
@@ -6,7 +13,6 @@ import { Services } from 'src/modules/services/domain/entities/services';
 
 @Controller('services')
 export class ServicesController {
-
   constructor(
     private readonly createServicesUseCase: CreateServicesUseCase,
     private readonly getServicesUseCase: GetServicesUseCase,
@@ -17,7 +23,9 @@ export class ServicesController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async create(@Body() CreateServicesDto: CreateServicesDto): Promise<Services | null> {
+  async create(
+    @Body() CreateServicesDto: CreateServicesDto,
+  ): Promise<Services | null> {
     console.log(CreateServicesDto);
 
     return this.createServicesUseCase.execute(CreateServicesDto);
@@ -28,7 +36,6 @@ export class ServicesController {
   async findAll(): Promise<Services[]> {
     return this.getServicesUseCase.execute();
   }
-
 
   /*
   @Get(':id')
@@ -53,5 +60,4 @@ export class ServicesController {
   }
 
   */
-
 }

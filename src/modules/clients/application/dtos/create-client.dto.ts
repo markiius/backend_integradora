@@ -50,7 +50,7 @@ export class CreateClientDto {
   active?: boolean = true; // Por defecto, el cliente está activo    
 }*/
 
-import { IsBoolean, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateClientDto {
   @IsNotEmpty({ message: 'El nombre de la compañia es obligatorio.' })
@@ -62,7 +62,9 @@ export class CreateClientDto {
   name_manager: string;
 
   @IsNotEmpty({ message: 'El apellido del manager es obligatorio.' })
-  @IsString({ message: 'El apellido del manager debe ser una cadena de texto.' })
+  @IsString({
+    message: 'El apellido del manager debe ser una cadena de texto.',
+  })
   LastName_manager: string;
 
   @IsNotEmpty({ message: 'El telefono de contacto es obligatorio.' })
@@ -74,7 +76,9 @@ export class CreateClientDto {
   email: string;
 
   @IsOptional()
-  @IsString({ message: 'El correo electronico copia debe ser una cadena de texto.' })
+  @IsString({
+    message: 'El correo electronico copia debe ser una cadena de texto.',
+  })
   cc_email: string;
 
   @IsNotEmpty({ message: 'La direccion es obligatoria.' })
@@ -94,10 +98,12 @@ export class CreateClientDto {
   zip_code: string;
 
   @IsNotEmpty({ message: 'El metodo de procesamiento es obligatorio.' })
-  @IsString({ message: 'El metodo de procesamiento debe ser una cadena de texto.' })
+  @IsString({
+    message: 'El metodo de procesamiento debe ser una cadena de texto.',
+  })
   Procesamiento_factura: string;
 
   @IsOptional()
   @IsBoolean({ message: 'El estado activo debe ser un valor booleano.' })
-  active?: boolean = true; // Por defecto, el cliente está activo    
+  active?: boolean = true; // Por defecto, el cliente está activo
 }

@@ -5,15 +5,16 @@ import { Attachment } from '../../domain/entities/attachment';
 
 @Controller('attachments')
 export class AttachmentController {
-
   constructor(
     private readonly createAttachmentUseCase: CreateAttachmentUseCase,
-  ) { }
+  ) {}
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async create(@Body() createAttachmentDto: CreateAttachmentDto): Promise<Attachment | null> {
-    console.log(createAttachmentDto)
+  async create(
+    @Body() createAttachmentDto: CreateAttachmentDto,
+  ): Promise<Attachment | null> {
+    console.log(createAttachmentDto);
     return this.createAttachmentUseCase.execute(createAttachmentDto);
   }
 
@@ -22,7 +23,6 @@ export class AttachmentController {
    async findAll(): Promise<Product[]> {
      return this.getProductsUseCase.execute();
    } */
-
 
   /*
   @Get(':id')
@@ -47,5 +47,4 @@ export class AttachmentController {
   }
 
   */
-
 }

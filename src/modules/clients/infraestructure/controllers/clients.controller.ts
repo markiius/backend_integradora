@@ -64,16 +64,20 @@ export class ClientsController {
 
 }*/
 
-
-
-import { Body, Controller, Get, HttpCode, HttpStatus, Post } from '@nestjs/common';
-import { CreateClientUseCase } from '../../application/use-cases/create-client.use-case'; 
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
+import { CreateClientUseCase } from '../../application/use-cases/create-client.use-case';
 import { CreateClientDto } from '../../application/dtos/create-client.dto';
 import { Client } from '../../domain/entities/client';
-import { GetClientsUseCase } from '../../application/use-cases/get-clients.use-case'; 
+import { GetClientsUseCase } from '../../application/use-cases/get-clients.use-case';
 @Controller('clients')
-export class ClientsController {  
-  
+export class ClientsController {
   constructor(
     private readonly getClientsUseCase: GetClientsUseCase,
     // Inyectamos el caso de uso para crear clientes
@@ -82,9 +86,11 @@ export class ClientsController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async create(@Body() createClientDto: CreateClientDto): Promise<Client | null> {
+  async create(
+    @Body() createClientDto: CreateClientDto,
+  ): Promise<Client | null> {
     console.log(createClientDto);
-    
+
     return this.createClientUseCase.execute(createClientDto);
   }
 

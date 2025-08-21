@@ -6,14 +6,14 @@ import { CreateAttachmentUseCase } from './application/use-cases/create-attachme
 import { AttachmentController } from './infraestructure/controllers/attachment.controller';
 
 @Module({
-    providers:[
-        PrismaService,
-        {
-            provide: IAttachmentRepository,
-            useClass:PrismaAttachmentsRepository,
-        },
-        CreateAttachmentUseCase, 
-    ],
-    controllers: [AttachmentController]
+  providers: [
+    PrismaService,
+    {
+      provide: IAttachmentRepository,
+      useClass: PrismaAttachmentsRepository,
+    },
+    CreateAttachmentUseCase,
+  ],
+  controllers: [AttachmentController],
 })
 export class AttachmentsModule {}

@@ -27,7 +27,7 @@ import { Module } from '@nestjs/common';
 import { ClientsController } from './infraestructure/controllers/clients.controller';
 import { CreateClientUseCase } from './application/use-cases/create-client.use-case';
 import { ClientRepository } from './domain/interfaces/client-repository.interface';
-import { MemoryClientsRepository } from './infraestructure/repositories/memory-clients.repository'; 
+import { MemoryClientsRepository } from './infraestructure/repositories/memory-clients.repository';
 import { GetClientsUseCase } from './application/use-cases/get-clients.use-case';
 
 @Module({
@@ -40,7 +40,7 @@ import { GetClientsUseCase } from './application/use-cases/get-clients.use-case'
     // casos de uso
     CreateClientUseCase,
     GetClientsUseCase,
-   ],
+  ],
   controllers: [ClientsController],
-}) 
+})
 export class ClientsModule {}

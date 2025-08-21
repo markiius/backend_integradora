@@ -1,6 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { Services } from "src/modules/services/domain/entities/services";
-import { IServicesRepository } from "src/modules/services/domain/interfaces/services-repository.interface";
+import { Injectable } from '@nestjs/common';
+import { Services } from 'src/modules/services/domain/entities/services';
+import { IServicesRepository } from 'src/modules/services/domain/interfaces/services-repository.interface';
 
 @Injectable()
 export class GetServicesUseCase {

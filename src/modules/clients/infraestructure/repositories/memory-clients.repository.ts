@@ -34,15 +34,15 @@ export class MemoryClientsRepository implements ClientRepository {
 export { ClientRepository };
 */
 
-import { Injectable } from "@nestjs/common";
-import { ClientRepository } from "../../domain/interfaces/client-repository.interface";
-import { Client } from "../../domain/entities/client";  
+import { Injectable } from '@nestjs/common';
+import { ClientRepository } from '../../domain/interfaces/client-repository.interface';
+import { Client } from '../../domain/entities/client';
 
 /**
  * Repositorio para clientes que usa memoria temporal
  */
 @Injectable()
-export class MemoryClientsRepository implements ClientRepository {  
+export class MemoryClientsRepository implements ClientRepository {
   #clients: Client[];
 
   constructor() {

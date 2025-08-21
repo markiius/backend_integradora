@@ -46,18 +46,18 @@ export class CreateClientUseCase{
   }
 }*/
 
-import { Injectable } from "@nestjs/common";
-import { Client } from "../../domain/entities/client";
-import { ClientRepository } from "../../domain/interfaces/client-repository.interface";
-import { CreateClientDto } from "../dtos/create-client.dto";
+import { Injectable } from '@nestjs/common';
+import { Client } from '../../domain/entities/client';
+import { ClientRepository } from '../../domain/interfaces/client-repository.interface';
+import { CreateClientDto } from '../dtos/create-client.dto';
 
 @Injectable()
-export class CreateClientUseCase {  
+export class CreateClientUseCase {
   constructor(private readonly clientRepository: ClientRepository) {}
 
   /**
    * Método para ejecutar el caso de uso
-   * @param dto 
+   * @param dto
    * @returns Cliente registrado o null
    */
 
@@ -76,9 +76,9 @@ export class CreateClientUseCase {
       dto.state,
       dto.zip_code,
       dto.Procesamiento_factura,
-      dto.active
-      );
-      console.log (clientData);
+      dto.active,
+    );
+    console.log(clientData);
     // enviar a guardar el cliente a través del repositorio de clientes
     return this.clientRepository.create(clientData);
   }

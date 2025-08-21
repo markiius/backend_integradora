@@ -1,4 +1,11 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
 import { CreateEstimateUseCase } from 'src/modules/estimates/application/use-cases/create-estimate.use-case';
 import { CreateEstimateDto } from 'src/modules/estimates/application/dtos/create-estimate.dto';
 import { GetEstimatesUseCase } from 'src/modules/estimates/application/use-cases/get-estimates.use-case';
@@ -6,7 +13,6 @@ import { Estimate } from '../../domain/entities/estimate';
 
 @Controller('estimates')
 export class EstimatesController {
-
   constructor(
     private readonly createEstimateUseCase: CreateEstimateUseCase,
     private readonly getEstimatesUseCase: GetEstimatesUseCase,
@@ -17,7 +23,9 @@ export class EstimatesController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async create(@Body() createEstimateDto: CreateEstimateDto): Promise<Estimate | null> {
+  async create(
+    @Body() createEstimateDto: CreateEstimateDto,
+  ): Promise<Estimate | null> {
     console.log(createEstimateDto);
 
     return this.createEstimateUseCase.execute(createEstimateDto);
@@ -28,7 +36,6 @@ export class EstimatesController {
   async findAll(): Promise<Estimate[]> {
     return this.getEstimatesUseCase.execute();
   }
-
 
   /*
   @Get(':id')
@@ -53,5 +60,4 @@ export class EstimatesController {
   }
 
   */
-
 }

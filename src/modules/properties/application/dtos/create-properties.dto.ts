@@ -1,9 +1,10 @@
 import { IsString, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
 
 export class CreatePropertiesDto {
-  
   @IsNotEmpty({ message: 'Nombre de la propiedad es requerido' })
-  @IsString({ message: 'El nombre de la propiedad debe ser una cadena de texto' })
+  @IsString({
+    message: 'El nombre de la propiedad debe ser una cadena de texto',
+  })
   property_name: string;
 
   @IsNotEmpty({ message: 'Nombre del gerente es requerido' })
@@ -47,7 +48,9 @@ export class CreatePropertiesDto {
   zip: number;
 
   @IsNotEmpty({ message: 'Invoice processing is required' })
-  @IsString({ message: 'El procesamiento de facturas debe ser una cadena de texto' })
+  @IsString({
+    message: 'El procesamiento de facturas debe ser una cadena de texto',
+  })
   invoice_processing: string;
 
   @IsNotEmpty({ message: 'Territory is required' })

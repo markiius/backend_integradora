@@ -1,7 +1,13 @@
-import { IsNumber, IsOptional, IsString, Min, IsDate, IsBoolean } from "class-validator";
+import {
+  IsNumber,
+  IsOptional,
+  IsString,
+  Min,
+  IsDate,
+  IsBoolean,
+} from 'class-validator';
 
 export class UpdateEstimateDto {
-  
   @IsOptional()
   @IsString({ message: 'El id de la propiedad debe ser una cadena de texto.' })
   id_property?: string;
@@ -15,7 +21,7 @@ export class UpdateEstimateDto {
   send_date?: Date;
 
   @IsOptional()
-  @IsDate({ message: 'La fecha de expiración debe ser de tipo fecha.'})
+  @IsDate({ message: 'La fecha de expiración debe ser de tipo fecha.' })
   expiration_date?: Date;
 
   @IsOptional()
@@ -35,15 +41,15 @@ export class UpdateEstimateDto {
   description?: string;
 
   @IsOptional()
-  @Min(0, {message: 'La cantidad debe ser mayor o igual a 0.' })
+  @Min(0, { message: 'La cantidad debe ser mayor o igual a 0.' })
   quantity?: number;
 
   @IsOptional()
-  @Min(0, {message: 'El monto debe ser mayor o igual a 0.' })
+  @Min(0, { message: 'El monto debe ser mayor o igual a 0.' })
   amount?: number;
 
   @IsOptional()
-  @IsBoolean({ message: "El campo \"tax_included\" debe ser verdadero o falso." })
+  @IsBoolean({ message: 'El campo "tax_included" debe ser verdadero o falso.' })
   tax_included?: boolean;
 
   @IsOptional()

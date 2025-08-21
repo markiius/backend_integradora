@@ -1,6 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { IEstimateRepository } from "src/modules/estimates/domain/interfaces/estimate-repository.interface";
-import { Estimate } from "src/modules/estimates/domain/entities/estimate";
+import { Injectable } from '@nestjs/common';
+import { IEstimateRepository } from 'src/modules/estimates/domain/interfaces/estimate-repository.interface';
+import { Estimate } from 'src/modules/estimates/domain/entities/estimate';
 /**
  * Repositorio para estimados que usa memoria temporal
  */

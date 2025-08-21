@@ -1,18 +1,24 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
 import { CreateUserUseCase } from '../../application/use-cases/create-user.use-case';
 import { CreateUserDto } from '../../application/dtos/create-user.dto';
 import { User } from '../../domain/entities/user';
 
 @Controller('users')
 export class UserController {
-
   constructor(
     private readonly createUserUseCase: CreateUserUseCase,
     //private readonly getProductsUseCase: GetProductsUseCase,
     // private readonly getProductByIdUseCase: GetProductByIdUseCase,
     // private readonly updateProductUseCase: UpdateProductUseCase,
     // private readonly deleteProductUseCase: DeleteProductUseCase,
-  ) { }
+  ) {}
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
@@ -25,7 +31,6 @@ export class UserController {
    async findAll(): Promise<Product[]> {
      return this.getProductsUseCase.execute();
    } */
-
 
   /*
   @Get(':id')
@@ -50,5 +55,4 @@ export class UserController {
   }
 
   */
-
 }

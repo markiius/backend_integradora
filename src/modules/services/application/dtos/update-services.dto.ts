@@ -1,7 +1,6 @@
-import { IsOptional, IsString } from "class-validator";
+import { IsOptional, IsString } from 'class-validator';
 
 export class UpdateServicesDto {
-  
   @IsOptional()
   @IsString({ message: 'El id del servicio debe ser una cadena de texto.' })
   id?: string;
@@ -11,7 +10,8 @@ export class UpdateServicesDto {
   service_code?: string;
 
   @IsOptional()
-  @IsString({ message: 'La descripcion del servicio debe ser una cadena de texto.' })
+  @IsString({
+    message: 'La descripcion del servicio debe ser una cadena de texto.',
+  })
   service_description?: string;
-
 }

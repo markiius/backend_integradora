@@ -1,4 +1,11 @@
-import { IsNotEmpty, IsString, IsDate, IsBoolean, IsNumber, Min } from "class-validator";
+import {
+  IsNotEmpty,
+  IsString,
+  IsDate,
+  IsBoolean,
+  IsNumber,
+  Min,
+} from 'class-validator';
 
 export class CreateEstimateDto {
   @IsNotEmpty({ message: 'El id de la propiedad es obligatorio.' })
@@ -34,13 +41,13 @@ export class CreateEstimateDto {
   description: string;
 
   @IsNumber()
-  @Min(0, {message: "La cantidad debe ser mayor o igual a 0"})
+  @Min(0, { message: 'La cantidad debe ser mayor o igual a 0' })
   quantity: number;
 
   @IsNumber()
-  @Min(0, {message: "El monto debe ser mayor o igual a 0"})
+  @Min(0, { message: 'El monto debe ser mayor o igual a 0' })
   amount: number;
- 
+
   @IsNotEmpty({ message: 'El campo "tax_included" es obligatorio.' })
   @IsBoolean({ message: 'El campo "tax_included" debe ser verdadero o falso.' })
   tax_included: boolean;
@@ -58,6 +65,5 @@ export class CreateEstimateDto {
   @IsNotEmpty({ message: 'El campo "total" es obligatorio.' })
   @IsNumber({}, { message: 'El campo "total" debe ser un número.' })
   @Min(0, { message: 'El campo "total" debe ser mayor o igual a 0.' })
-  total: number;  
-  
-  }
+  total: number;
+}

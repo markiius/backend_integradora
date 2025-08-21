@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateServicesDto {
   @IsNotEmpty({ message: 'El id del servicio es obligatorio.' })
@@ -10,7 +10,8 @@ export class CreateServicesDto {
   service_code: string;
 
   @IsNotEmpty({ message: 'La descriocion del servicio es obligatorio.' })
-  @IsString({ message: 'La descripcion del servicio debe ser una cadena de texto.' })
+  @IsString({
+    message: 'La descripcion del servicio debe ser una cadena de texto.',
+  })
   service_description: string;
-
-  }
+}

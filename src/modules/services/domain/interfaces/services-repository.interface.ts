@@ -1,4 +1,4 @@
-import { Services } from "../entities/services";
+import { Services } from '../entities/services';
 
 export abstract class IServicesRepository {
   abstract create(Services: Services): Promise<Services | null>;

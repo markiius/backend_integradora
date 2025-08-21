@@ -1,7 +1,7 @@
-import { Injectable } from "@nestjs/common";
-import { Estimate } from "src/modules/estimates/domain/entities/estimate";
-import { IEstimateRepository } from "../../domain/interfaces/estimate-repository.interface";
-import { CreateEstimateDto } from "../dtos/create-estimate.dto";
+import { Injectable } from '@nestjs/common';
+import { Estimate } from '../../domain/entities/estimate';
+import { IEstimateRepository } from '../../domain/interfaces/estimate-repository.interface';
+import { CreateEstimateDto } from '../dtos/create-estimate.dto';
 
 /**
  * Caso de uso para registrar un estimado
@@ -12,7 +12,7 @@ export class CreateEstimateUseCase {
   constructor(private readonly estimateRepository: IEstimateRepository) {}
   /**
    * Método para ejecutar el caso de uso
-   * @param dto 
+   * @param dto
    * @returns Estimado registrado o null
    */
 
@@ -33,13 +33,12 @@ export class CreateEstimateUseCase {
       dto.tax_included,
       dto.subtotal,
       dto.tax_amount,
-      dto.total
+      dto.total,
     );
 
     console.log(estimateData);
 
     // enviar a guardar el estimado a través del repositorio de estimados
     return this.estimateRepository.create(estimateData);
-
   }
 }

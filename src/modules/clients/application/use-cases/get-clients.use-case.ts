@@ -21,12 +21,12 @@ export class GetClientsUseCase{
   }
 }*/
 
-import { Injectable } from "@nestjs/common";
-import { Client } from "../../domain/entities/client";  
-import { ClientRepository } from "../../domain/interfaces/client-repository.interface";
+import { Injectable } from '@nestjs/common';
+import { Client } from '../../domain/entities/client';
+import { ClientRepository } from '../../domain/interfaces/client-repository.interface';
 /**
  * Caso de uso para listar todos los clientes
- */ 
+ */
 @Injectable()
 export class GetClientsUseCase {
   constructor(private readonly clientRepository: ClientRepository) {}

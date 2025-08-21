@@ -5,12 +5,12 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 
 @Controller('auth')
 export class AuthController {
-    constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
-    @Public()
-    @UseGuards(LocalAuthGuard)
-    @Post('login')
-    async login(@Request() req) {
-        return this.authService.createJWT(req.user);
-    }
+  @Public()
+  @UseGuards(LocalAuthGuard)
+  @Post('login')
+  async login(@Request() req) {
+    return this.authService.createJWT(req.user);
+  }
 }

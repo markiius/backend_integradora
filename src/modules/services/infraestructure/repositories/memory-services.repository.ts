@@ -1,6 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { IServicesRepository } from "src/modules/services/domain/interfaces/services-repository.interface";
-import { Services } from "src/modules/services/domain/entities/services";
+import { Injectable } from '@nestjs/common';
+import { IServicesRepository } from 'src/modules/services/domain/interfaces/services-repository.interface';
+import { Services } from 'src/modules/services/domain/entities/services';
 
 /**
  * Repositorio para servicios que usan memoria temporal

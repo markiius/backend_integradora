@@ -40,7 +40,7 @@ export class CreateClientDto {
 
 }*/
 
-import { IsBoolean, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 export class UpdateClientDto {
   @IsOptional({ message: 'El nombre de la compañia es obligatorio.' })
   @IsString({ message: 'El nombre debe ser una cadena de texto.' })
@@ -51,7 +51,9 @@ export class UpdateClientDto {
   name_manager?: string;
 
   @IsOptional({ message: 'El apellido del manager es obligatorio.' })
-  @IsString({ message: 'El apellido del manager debe ser una cadena de texto.' })
+  @IsString({
+    message: 'El apellido del manager debe ser una cadena de texto.',
+  })
   LastName_manager?: string;
 
   @IsOptional({ message: 'El telefono de contacto es obligatorio.' })
@@ -83,7 +85,9 @@ export class UpdateClientDto {
   zip_code?: string;
 
   @IsOptional({ message: 'El metodo de procesamiento es obligatorio.' })
-  @IsString({ message: 'El metodo de procesamiento debe ser una cadena de texto.' })
+  @IsString({
+    message: 'El metodo de procesamiento debe ser una cadena de texto.',
+  })
   Procesamiento_factura?: string;
 
   @IsOptional()

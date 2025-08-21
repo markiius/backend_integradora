@@ -29,7 +29,7 @@ import { PrismaClientsRepository } from "../../infraestructure/repositories/pris
   exports: [ClientRepository], // Exportar el repositorio para que pueda ser utilizado en otros módulos
 }
 )export class ClientRepositoryModule {}*/
-import { Client } from "../entities/client";
+import { Client } from '../entities/client';
 export abstract class ClientRepository {
   abstract create(client: Client): Promise<Client | null>;
   abstract getAll(): Promise<Client[]>;

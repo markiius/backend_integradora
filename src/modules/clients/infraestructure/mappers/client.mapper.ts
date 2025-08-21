@@ -4,7 +4,10 @@ import { Client } from '../../domain/entities/client';
 // import { Client } from '../../domain/entities/Client';
 // Make sure the file exists at the specified path.
 // importa el tipo de Product desde prisma, y asigna un alias, ejemplo: PrismaProduct
-import { Prisma, Client as PrismaClient} from "../../../../../generated/prisma";
+import {
+  Prisma,
+  Client as PrismaClient,
+} from '../../../../../generated/prisma';
 
 export class ClientMapper {
   static toDomain(prismaClient: PrismaClient): Client {
@@ -21,7 +24,7 @@ export class ClientMapper {
       prismaClient.state,
       prismaClient.zip_code,
       prismaClient.Procesamiento_factura,
-      prismaClient.active
+      prismaClient.active,
     );
   }
 
@@ -45,4 +48,3 @@ export class ClientMapper {
     };
   }
 }
-     

@@ -1,4 +1,4 @@
-import { Estimate } from "../entities/estimate";
+import { Estimate } from '../entities/estimate';
 
 export abstract class IEstimateRepository {
   abstract create(estimate: Estimate): Promise<Estimate | null>;
